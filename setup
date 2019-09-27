@@ -1,0 +1,44 @@
+#!/bin/bash
+#
+# Applies setup.
+#
+set -o nounset -o errexit -o pipefail
+
+# Settings
+REPO_NAME="fedora-setup"
+REPO_URL="git@github.com:fernandoacorreia/$REPO_NAME.git"
+
+# Install git
+if ! which git &>/dev/null
+then
+  echo "Installing git"
+  sudo dnf install git-all
+fi
+
+# Create ssh key
+if ! test -f $HOME/.ssh/id_rsa
+then
+  echo "Creating ssh key"
+  ssh-keygen -t rsa -b 4096
+  echo "New ssh key created:"
+  cat $HOME/.ssh/id_rsa.pub
+  echo "Add it to your GitHub account and run this script again."
+  echo "See https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"
+  exit 1
+fi
+
+# Add ssh key to ssh agent
+echo "Adding ssh key to ssh agent"
+eval "$(ssh-agent -s)"
+ssh-add $HOME/.ssh/id_rsa
+
+# Clone repository
+if ! test -d $HOME/$REPO_NAME
+then
+  echo "Cloning from $REPO_URL"
+  cd $HOME
+  git clone $REPO_URL $REPO_NAME
+fi
+
+# Finish
+echo "Done"
