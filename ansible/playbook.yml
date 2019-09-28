@@ -1,0 +1,28 @@
+---
+- hosts: all
+
+  vars:
+    hack_font_version: "v3.003"
+    node_version: "12.11.0"
+
+  roles:
+  - common
+#  - git
+#  - tig
+#  - docker
+#  - docker-compose
+#  - java
+#  - sbt
+#  - zsh
+#  - lnav
+#  - homefiles
+#  - ripgrep
+#  - fzf
+#  - neovim
+#  - chrome
+#  - zoom
+#  - node
+#  - pyenv
+#  - keybase
+#  - virtualbox
+#  - wrk2

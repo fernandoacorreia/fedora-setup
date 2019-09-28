@@ -1,0 +1,57 @@
+---
+- name: Get the username running Ansible
+  local_action: command whoami
+  register: username_on_host
+
+- name: Set home directory
+  set_fact:
+    home_dir: "{{ lookup('env','HOME') }}"
+
+- name: Create basic directories
+  file: path={{ home_dir }}/{{ item }} state=directory
+  with_items:
+    - .config
+    - opt
+    - opt/bin
+    - projects
+    - scratch
+    - secrets
+
+- name: Update packages
+  become: yes
+  dnf:
+    name: "*"
+    state: latest
+
+- name: Install basic packages
+  become: yes
+  dnf:
+    state: present
+    name:
+    - "@development-tools"
+    - colordiff
+    - dnf-plugins-core
+    - htop
+    - jq
+    - pcre
+    - the_silver_searcher
+    - tig
+    - xclip
+
+# https://github.com/source-foundry/hack-linux-installer
+- name: Install Hack font
+  shell: |
+    curl -L https://raw.githubusercontent.com/source-foundry/hack-linux-installer/master/hack-linux-installer.sh -o /tmp/hack-linux-installer.sh
+    chmod +x /tmp/hack-linux-installer.sh
+    mkdir -p {{ home_dir }}/.local/share/fonts
+    /tmp/hack-linux-installer.sh {{ hack_font_version }}
+  args:
+    creates: "{{ home_dir }}/.local/share/fonts/Hack-Regular.ttf"
+    warn: false
+
+- name: Install basic pip packages
+  become: yes
+  pip:
+    name:
+    - awscli
+    - yolk3k
