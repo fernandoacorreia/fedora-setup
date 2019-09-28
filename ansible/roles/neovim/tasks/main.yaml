@@ -4,3 +4,17 @@
   dnf:
     name: neovim
     state: latest
+
+- name: Set neovim as alternative to vi
+  become: yes
+  alternatives:
+    name: vi
+    link: /usr/local/bin/vi
+    path: /usr/bin/nvim
+
+- name: Set neovim as alternative to vim
+  become: yes
+  alternatives:
+    name: vim
+    link: /usr/local/bin/vim
+    path: /usr/bin/nvim
