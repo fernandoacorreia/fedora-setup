@@ -1,0 +1,6 @@
+---
+- name: Install Google Chrome
+  become: yes
+  dnf:
+    enablerepo: google-chrome
+    name: google-chrome-stable
