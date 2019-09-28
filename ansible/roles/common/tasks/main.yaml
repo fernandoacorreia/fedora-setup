@@ -26,7 +26,7 @@
 - name: Install basic packages
   become: yes
   dnf:
-    state: present
+    state: latest
     name:
     - "@development-tools"
     - colordiff
@@ -55,6 +55,19 @@
 - name: Install basic pip packages
   become: yes
   pip:
+    state: latest
     name:
     - awscli
     - yolk3k
+
+- name: Add the flathub flatpak repository remote
+  become: yes
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+- name: Update flatpak packages
+  become: yes
+  shell: |
+    flatpak update
