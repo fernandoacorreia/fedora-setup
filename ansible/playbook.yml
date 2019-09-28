@@ -8,22 +8,12 @@
   roles:
   - common
   - chrome
-#  - git
-#  - tig
 #  - docker
 #  - docker-compose
 #  - java
-#  - sbt
 #  - zsh
 #  - lnav
 #  - homefiles
 #  - ripgrep
 #  - fzf
 #  - neovim
-#  - chrome
-#  - zoom
-#  - node
-#  - pyenv
-#  - keybase
-#  - virtualbox
-#  - wrk2
