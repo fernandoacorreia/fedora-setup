@@ -16,3 +16,6 @@
 [submodule "vendor/vim-numbertoggle"]
 	path = vendor/vim-numbertoggle
 	url = git@github.com:fernandoacorreia/vim-numbertoggle.git
+[submodule "vendor/fzf"]
+	path = vendor/fzf
+	url = git@github.com:fernandoacorreia/fzf.git
