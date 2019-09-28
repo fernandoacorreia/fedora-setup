@@ -8,11 +8,11 @@
   roles:
   - common
   - chrome
+  - neovim
 #  - docker
 #  - java
 #  - zsh
 #  - homefiles
 #  - ripgrep
 #  - fzf
-#  - neovim
 #  - kubernetes

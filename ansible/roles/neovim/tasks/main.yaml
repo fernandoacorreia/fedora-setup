@@ -1,0 +1,6 @@
+---
+- name: Install neovim
+  become: yes
+  dnf:
+    name: neovim
+    state: latest
