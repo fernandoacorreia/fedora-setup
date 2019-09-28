@@ -32,6 +32,7 @@
     - colordiff
     - dnf-plugins-core
     - fedora-workstation-repositories
+    - fzf
     - git-all
     - htop
     - jq
