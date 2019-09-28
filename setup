@@ -50,8 +50,17 @@ clone_repository() {
   fi
 }
 
+install_ansible() {
+  if missing_executable ansible-playbook; then
+    echo "Installing Ansible"
+    sudo dnf install python3-pip
+    sudo pip3 install ansible
+  fi
+}
+
 install_git
 create_ssh_key
 add_ssh_key_to_agent
 clone_repository
-echo "Done"
+install_ansible
+echo "Setup finished"
