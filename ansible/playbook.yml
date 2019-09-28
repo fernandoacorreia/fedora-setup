@@ -9,11 +9,10 @@
   - common
   - chrome
 #  - docker
-#  - docker-compose
 #  - java
 #  - zsh
-#  - lnav
 #  - homefiles
 #  - ripgrep
 #  - fzf
 #  - neovim
+#  - kubernetes

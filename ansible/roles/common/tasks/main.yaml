@@ -35,6 +35,7 @@
     - git-all
     - htop
     - jq
+    - lnav
     - pcre
     - the_silver_searcher
     - tig
