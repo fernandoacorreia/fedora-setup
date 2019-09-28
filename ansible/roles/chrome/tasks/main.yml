@@ -4,3 +4,4 @@
   dnf:
     enablerepo: google-chrome
     name: google-chrome-stable
+    state: latest
