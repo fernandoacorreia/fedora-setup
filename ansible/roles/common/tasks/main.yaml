@@ -7,6 +7,10 @@
   set_fact:
     home_dir: "{{ lookup('env','HOME') }}"
 
+- name: Set setup directory
+  set_fact:
+    setup_dir: "{{ home_dir }}/fedora-setup"
+
 - name: Create basic directories
   file: path={{ home_dir }}/{{ item }} state=directory
   with_items:

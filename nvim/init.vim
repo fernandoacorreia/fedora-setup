@@ -1,0 +1,4 @@
+source $HOME/.config/nvim/config/commands.vim
+source $HOME/.config/nvim/config/functions.vim
+source $HOME/.config/nvim/config/bindings.vim
+source $HOME/.config/nvim/config/settings.vim

@@ -1,4 +1,10 @@
 ---
+- name: Create link for ~/.config/nvim/
+  file:
+    src: "{{ setup_dir }}/nvim/"
+    dest: "{{ home_dir }}/.config/nvim"
+    state: link
+
 - name: Install neovim
   become: yes
   dnf:
