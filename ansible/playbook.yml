@@ -3,7 +3,6 @@
 
   vars:
     hack_font_version: "v3.003"
-    node_version: "12.11.0"
 
   roles:
   - common
@@ -13,4 +12,3 @@
   - kubernetes
 #  - zsh
 #  - homefiles
-#  - ripgrep

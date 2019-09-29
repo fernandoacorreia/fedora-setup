@@ -42,6 +42,7 @@
     - jq
     - lnav
     - pcre
+    - ripgrep
     - the_silver_searcher
     - tig
     - xclip
