@@ -1,0 +1,31 @@
+---
+- name: Add Docker repository
+  become: yes
+  yum_repository:
+    name: docker-ce
+    description: Docker
+    baseurl: https://download.docker.com/linux/fedora/docker-ce.repo
+
+- name: Install Docker
+  become: yes
+  dnf:
+    enablerepo: docker-ce
+    update_cache: yes
+    state: latest
+    name:
+    - containerd.io
+    - docker-ce
+    - docker-ce-cli
+
+- name: Start Docker service
+  become: yes
+  systemd:
+    state: started
+    name: docker
+
+- name: Add user to docker group
+  become: yes
+  user:
+    name: '{{ ansible_user_id }}'
+    groups: docker
+    append: yes

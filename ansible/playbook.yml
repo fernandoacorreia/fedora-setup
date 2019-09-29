@@ -9,8 +9,7 @@
   - common
   - chrome
   - neovim
-#  - docker
-#  - java
+  - docker
 #  - zsh
 #  - homefiles
 #  - ripgrep
