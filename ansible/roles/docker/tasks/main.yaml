@@ -20,6 +20,7 @@
 - name: Start Docker service
   become: yes
   systemd:
+    enabled: yes
     state: started
     name: docker
 
