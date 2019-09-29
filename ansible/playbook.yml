@@ -3,6 +3,7 @@
 
   vars:
     hack_font_version: "v3.003"
+    setup_dir_name: "fedora-setup"
 
   roles:
   - common
