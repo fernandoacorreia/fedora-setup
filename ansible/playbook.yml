@@ -10,7 +10,7 @@
   - chrome
   - neovim
   - docker
-  - k3d
+  - kubernetes
 #  - zsh
 #  - homefiles
 #  - ripgrep

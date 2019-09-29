@@ -1,0 +1,33 @@
+---
+- name: Install k3d
+  become: yes
+  shell: |
+    curl -s https://raw.githubusercontent.com/rancher/k3d/master/install.sh | bash
+  args:
+    creates: /usr/local/bin/k3d
+    warn: false
+
+- name: Add Kubernetes repository
+  become: yes
+  yum_repository:
+    name: kubernetes
+    description: Google's Kubernetes repository
+    baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+    gpgcheck: yes
+    gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+    repo_gpgcheck: yes
+
+- name: Install kubectl
+  become: yes
+  dnf:
+    enablerepo: kubernetes
+    update_cache: yes
+    state: latest
+    name: kubectl
+
+- name: Create alias for kubectl
+  become: yes
+  file:
+    src: /usr/bin/kubectl
+    dest: /usr/bin/k
+    state: link
