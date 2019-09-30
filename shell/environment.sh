@@ -14,4 +14,4 @@ export KEYTIMEOUT=1
 export EDITOR=/usr/bin/nvim
 
 # Add bin directory to path
-export PATH="$HOME/fedora_setup/bin:$PATH"
+export PATH="$HOME/fedora-setup/bin:$PATH"

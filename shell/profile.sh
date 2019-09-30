@@ -4,10 +4,10 @@ then
   for f in ~/secrets/*.sh; do source $f; done
 fi
 
-source $HOME/fedora_setup/shell/environment.sh
-source $HOME/fedora_setup/shell/aliases.sh
-source $HOME/fedora_setup/shell/less-termcap.sh
-source $HOME/fedora_setup/shell/init.sh
+source $HOME/fedora-setup/shell/environment.sh
+source $HOME/fedora-setup/shell/aliases.sh
+source $HOME/fedora-setup/shell/less-termcap.sh
+source $HOME/fedora-setup/shell/init.sh
 
 # Support a local profile script that's not saved to source control.
 if test -f $HOME/local_profile.sh
