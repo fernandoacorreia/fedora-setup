@@ -19,3 +19,6 @@
 [submodule "vendor/fzf"]
 	path = vendor/fzf
 	url = git@github.com:fernandoacorreia/fzf.git
+[submodule "vendor/docker-npm"]
+	path = vendor/docker-npm
+	url = git@github.com:fernandoacorreia/docker-npm.git

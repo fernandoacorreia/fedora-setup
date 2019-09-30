@@ -15,3 +15,6 @@ export EDITOR=/usr/bin/nvim
 
 # Add bin directory to path
 export PATH="$HOME/fedora-setup/bin:$PATH"
+
+# docker-npm
+export PATH="$HOME/fedora-setup/vendor/docker-npm/bin:$PATH"
