@@ -11,5 +11,4 @@
   - neovim
   - docker
   - kubernetes
-#  - zsh
-#  - homefiles
+  - shell

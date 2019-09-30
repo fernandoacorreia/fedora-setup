@@ -1,0 +1,47 @@
+---
+- name: Install zsh
+  become: yes
+  dnf:
+    name: zsh
+    state: latest
+
+- name: Set Z shell as default shell
+  become: yes
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh
+
+- name: Create secrets README
+  shell: echo "# Shell files exporting secrets as environment variables." > $HOME/secrets/README
+  args:
+    creates: "{{ home_dir }}/secrets/README"
+
+- name: Get status for ~/.profile
+  stat:
+    path: "{{ home_dir }}/.profile"
+  register: home_dot_profile
+
+- name: Preserve existing ~/.profile
+  command: mv "{{ home_dir }}/.profile" "{{ home_dir }}/.profile.bak"
+  when: home_dot_profile.stat.isreg is defined and home_dot_profile.stat.isreg
+
+- name: Create link for ~/.profile
+  file:
+    src: "{{ setup_dir }}/shell/profile.sh"
+    dest: "{{ home_dir }}/.profile"
+    state: link
+
+- name: Get status for ~/.zshrc
+  stat:
+    path: "{{ home_dir }}/.zshrc"
+  register: home_dot_zshrc
+
+- name: Preserve existing ~/.zshrc
+  command: mv "{{ home_dir }}/.zshrc" "{{ home_dir }}/.zshrc.bak"
+  when: home_dot_zshrc.stat.isreg is defined and home_dot_zshrc.stat.isreg
+
+- name: Create link for ~/.zshrc
+  file:
+    src: "{{ setup_dir }}/shell/zshrc.sh"
+    dest: "{{ home_dir }}/.zshrc"
+    state: link

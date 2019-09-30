@@ -1,0 +1,4 @@
+- nvim-miniyank
+- Ag support in neovim
+- stern
+- editorconfig
