@@ -7,7 +7,7 @@ fi
 source $HOME/fedora-setup/shell/environment.sh
 source $HOME/fedora-setup/shell/aliases.sh
 source $HOME/fedora-setup/shell/less-termcap.sh
-source $HOME/fedora-setup/shell/init.sh
+source $HOME/.fzf.zsh
 
 # Support a local profile script that's not saved to source control.
 if test -f $HOME/local_profile.sh

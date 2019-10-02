@@ -1,0 +1,12 @@
+---
+- name: Install fzf
+  become: yes
+  dnf:
+    state: latest
+    name: fzf
+
+- name: Setup fzf
+  shell: |
+    {{ setup_dir }}/vendor/fzf/install
+  args:
+    creates: ~/.fzf.zsh
