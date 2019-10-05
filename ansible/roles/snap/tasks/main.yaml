@@ -1,0 +1,19 @@
+---
+- name: Install snap
+  become: yes
+  dnf:
+    name: snapd
+    state: latest
+
+- name: Create link to snap directory
+  become: yes
+  file:
+    src: /var/lib/snapd/snap
+    dest: /snap
+    state: link
+
+- name: Install snap store
+  become: yes
+  snap:
+    name:
+      - snap-store
