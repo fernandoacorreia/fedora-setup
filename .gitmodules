@@ -22,3 +22,6 @@
 [submodule "vendor/docker-npm"]
 	path = vendor/docker-npm
 	url = git@github.com:fernandoacorreia/docker-npm.git
+[submodule "vendor/forkizard"]
+	path = vendor/forkizard
+	url = git@github.com:fernandoacorreia/forkizard.git

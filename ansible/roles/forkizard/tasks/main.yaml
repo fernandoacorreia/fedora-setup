@@ -1,0 +1,12 @@
+---
+- name: Build forkizard
+  shell: "bin/build"
+  args:
+    chdir: "{{ setup_dir }}/vendor/forkizard"
+    creates: "{{ setup_dir }}/vendor/forkizard/forkizard"
+
+- name: Create link to forkizard
+  file:
+    src: "{{ setup_dir }}/vendor/forkizard/forkizard"
+    dest: "{{ setup_dir }}/bin/forkizard"
+    state: link
