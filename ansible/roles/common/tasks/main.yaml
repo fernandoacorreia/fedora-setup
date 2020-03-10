@@ -72,3 +72,9 @@
   become: yes
   shell: |
     flatpak update
+
+- name: Create editorconfig symlink
+  file:
+    src: "{{ setup_dir }}/.editorconfig"
+    dest: "{{ home_dir }}/.editorconfig"
+    state: link
