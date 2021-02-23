@@ -10,6 +10,7 @@
   - chrome
   - neovim
   - docker
+  - docker-compose
   - kubernetes
   - fzf
   - shell
