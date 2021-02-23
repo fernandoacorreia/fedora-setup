@@ -1,0 +1,4 @@
+---
+- name: Setup finished
+  debug:
+    msg: "Log off and log back in to apply changes made to your user's profile."

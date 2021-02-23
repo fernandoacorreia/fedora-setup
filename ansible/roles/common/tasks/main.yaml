@@ -32,6 +32,7 @@
     - colordiff
     - dnf-plugins-core
     - fedora-workstation-repositories
+    - flatpak
     - git-all
     - htop
     - jq
@@ -40,6 +41,7 @@
     - ripgrep
     - the_silver_searcher
     - tig
+    - tree
     - xclip
 
 # https://github.com/source-foundry/hack-linux-installer
