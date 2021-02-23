@@ -13,7 +13,8 @@
   - shell
   - snap
   - vscode
-  - forkizard
   - docker
   - docker-compose
   - kubernetes
+  - forkizard
+  - final-message

@@ -1,5 +1,6 @@
 ---
 - name: Build forkizard
+  become: yes
   shell: "bin/build"
   args:
     chdir: "{{ setup_dir }}/vendor/forkizard"
