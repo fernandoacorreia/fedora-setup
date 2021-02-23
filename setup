@@ -47,7 +47,7 @@ clone_repository() {
   then
     echo "Cloning from $REPO_URL"
     cd $HOME
-    git clone $REPO_URL $REPO_NAME
+    git clone --recurse-submodules $REPO_URL $REPO_NAME
   fi
 }
 
