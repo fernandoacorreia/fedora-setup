@@ -7,7 +7,7 @@ set -o nounset -o errexit -o pipefail
 # Settings
 REPO_NAME="fedora-setup"
 REPO_URL="git@github.com:fernandoacorreia/$REPO_NAME.git"
-SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+REPO_DIR="$HOME/$REPO_NAME"
 
 missing_executable() {
   local executable=$1
@@ -43,7 +43,7 @@ add_ssh_key_to_agent() {
 }
 
 clone_repository() {
-  if ! test -d $HOME/$REPO_NAME
+  if ! test -d "$REPO_DIR"
   then
     echo "Cloning from $REPO_URL"
     cd $HOME
@@ -61,7 +61,7 @@ install_ansible() {
 
 apply_playbook() {
   echo "Applying Ansible playbook"
-  cd "$HOME/$REPO_NAME/ansible"
+  cd "$REPO_DIR/ansible"
   export ANSIBLE_NOCOWS=1
   ansible-playbook -i inventory --ask-become-pass playbook.yml
 }
