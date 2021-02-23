@@ -9,11 +9,11 @@
   - common
   - chrome
   - neovim
-  - docker
-  - docker-compose
-  - kubernetes
   - fzf
   - shell
   - snap
   - vscode
   - forkizard
+  - docker
+  - docker-compose
+  - kubernetes
