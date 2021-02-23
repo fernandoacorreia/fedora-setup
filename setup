@@ -61,7 +61,7 @@ install_ansible() {
 
 apply_playbook() {
   echo "Applying Ansible playbook"
-  cd "$SCRIPT_DIR/ansible"
+  cd "$HOME/$REPO_NAME/ansible"
   export ANSIBLE_NOCOWS=1
   ansible-playbook -i inventory --ask-become-pass playbook.yml
 }
