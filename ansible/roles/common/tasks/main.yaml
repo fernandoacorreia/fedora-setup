@@ -41,6 +41,7 @@
     - ripgrep
     - the_silver_searcher
     - tig
+    - tree
     - xclip
 
 # https://github.com/source-foundry/hack-linux-installer
