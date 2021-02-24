@@ -1,0 +1,6 @@
+[pull]
+	rebase = true
+[core]
+	excludesfile = /home/fedora/.gitignore_global
+[diff]
+	colorMoved = zebra

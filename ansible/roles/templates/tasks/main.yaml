@@ -1,0 +1,12 @@
+---
+- name: Create ~/.gitconfig from template
+  template:
+    src: "{{ setup_dir }}/templates/gitconfig"
+    dest: "{{ home_dir }}/.gitconfig"
+    force: no
+
+- name: Create ~/.gitignore_global from template
+  template:
+    src: "{{ setup_dir }}/templates/gitignore_global"
+    dest: "{{ home_dir }}/.gitignore_global"
+    force: no
